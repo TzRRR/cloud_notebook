@@ -1,5 +1,7 @@
 # Airline Safety Data Analysis
 
+[![CI](https://github.com/TzRRR/cloud_notebook/actions/workflows/CI.yml/badge.svg)](https://github.com/TzRRR/cloud_notebook/actions/workflows/CI.yml)
+
 This repository contains a data analysis project using airline safety data. The project performs data manipulation and visualization on Google Colab Notebook.
 
 ## Dataset
