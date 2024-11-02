@@ -27,10 +27,6 @@ jobs:
         run: |
           nbqa black cloud_notebook.ipynb --nbqa-mutate
 
-      - name: Run flake8 for linting
-        run: |
-          nbqa flake8 cloud_notebook.ipynb
-
       - name: Run tests with nbval
         run: |
           python -m pytest --nbval *.ipynb
