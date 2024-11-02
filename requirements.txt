@@ -1,0 +1,4 @@
+nbval
+nbqa
+black
+flake8

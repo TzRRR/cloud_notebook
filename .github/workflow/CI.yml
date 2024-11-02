@@ -1,0 +1,36 @@
+name: Test Notebook
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run black for formatting
+        run: |
+          nbqa black cloud_notebook.ipynb --nbqa-mutate
+
+      - name: Run flake8 for linting
+        run: |
+          nbqa flake8 cloud_notebook.ipynb
+
+      - name: Run tests with nbval
+        run: |
+          python -m pytest --nbval *.ipynb
